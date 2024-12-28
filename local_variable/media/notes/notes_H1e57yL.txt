@@ -1,0 +1,10 @@
+glue code - code which is used to connect the seperate program for computability and compatiblity.
+two language problem :- a language which is used to research as well as create a production code.
+
+Numpy used to computational calcuation data
+pandas used to representation and cleaning of the data structure.
+scipy is used for mathamatical computations
+statsmodels is a statistical analysis package that was seeded by work from Stanford University statistics professor Jonathan Taylor
+scikit library
+pip is similar to the conda
+

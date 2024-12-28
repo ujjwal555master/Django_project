@@ -1,0 +1,11 @@
+<h1>Edit Note</h1>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <label for="title">Title:</label>
+    <input type="text" name="title" id="title" value="{{ note.title }}">
+    <label for="description">Description:</label>
+    <textarea name="description" id="description">{{ note.description }}</textarea>
+    <label for="file">File:</label>
+    <input type="file" name="file" id="file">
+    <button type="submit">Update</button>
+</form>

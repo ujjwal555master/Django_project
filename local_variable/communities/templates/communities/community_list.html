@@ -1,0 +1,10 @@
+<h1>Communities</h1>
+<a href="{% url 'create_community' %}">Create New Community</a>
+<ul>
+    {% for community in communities %}
+        <li>
+            <a href="{% url 'community_detail' community.id %}">{{ community.name }}</a>
+            <p>Created by: <a href="{% url 'user_profile' community.created_by.id %}">{{ community.created_by.username }}</a></p>
+        </li>
+    {% endfor %}
+</ul>

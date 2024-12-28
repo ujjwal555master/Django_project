@@ -1,0 +1,16 @@
+<h1>Upload Question Paper</h1>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <label for="title">Title:</label>
+    <input type="text" name="title" id="title" required>
+    <label for="subject">Subject:</label>
+    <input type="text" name="subject" id="subject" required>
+    <label for="exam_type">Exam Type:</label>
+    <select name="exam_type" id="exam_type" required>
+        <option value="Semester">Semester</option>
+        <option value="Competitive">Competitive</option>
+    </select>
+    <label for="file">File:</label>
+    <input type="file" name="file" id="file" required>
+    <button type="submit">Upload</button>
+</form>

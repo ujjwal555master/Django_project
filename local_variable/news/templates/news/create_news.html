@@ -1,0 +1,17 @@
+<h1>Create News</h1>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <label for="community">Select Community:</label>
+    <select name="community" id="community" required>
+        {% for community in communities %}
+            <option value="{{ community.id }}">{{ community.name }}</option>
+        {% endfor %}
+    </select>
+    <label for="title">Title:</label>
+    <input type="text" name="title" id="title" required>
+    <label for="content">Content:</label>
+    <textarea name="content" id="content" required></textarea>
+    <label for="image">Image:</label>
+    <input type="file" name="image" id="image">
+    <button type="submit">Create</button>
+</form>

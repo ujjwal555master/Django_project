@@ -1,0 +1,13 @@
+<h1>Question Papers</h1>
+<a href="{% url 'upload_paper' %}">Upload New Paper</a>
+{{ request.user }}
+<ul>
+    {% for paper in papers %}
+        <li>
+            <a href="{% url 'paper_detail' paper.id %}">{{ paper.title }}</a> - {{ paper.exam_type }} ({{ paper.subject }})
+            {% if request.user == paper.uploaded_by or request.user == 'admin' %}
+                <a href="{% url 'delete_paper' paper.id %}">Delete</a>
+            {% endif %}
+        </li>
+    {% endfor %}
+</ul>

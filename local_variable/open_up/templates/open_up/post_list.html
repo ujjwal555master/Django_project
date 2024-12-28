@@ -1,0 +1,10 @@
+<h1>Open Up Posts</h1>
+<a href="{% url 'create_post' %}">Create New Post</a>
+<ul>
+    {% for post in posts %}
+        <li>
+            <a href="{% url 'post_detail' post.id %}">{{ post.title }}</a> by {{ post.author.username }}
+            ({{ post.created_at|date:"F j, Y" }})
+        </li>
+    {% endfor %}
+</ul>

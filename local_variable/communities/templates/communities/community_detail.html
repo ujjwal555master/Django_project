@@ -1,0 +1,17 @@
+<h1>{{ community.name }}</h1>
+<p>{{ community.description }}</p>
+<p>Created by: {{ community.created_by.username }} on {{ community.created_at|date:"F j, Y" }}</p>
+<h2>Members</h2>
+<ul>
+    {% for member in members %}
+        <li>
+            <a href="{% url 'user_profile' member.user.id %}">{{ member.user.username }}</a>
+        </li>
+    {% endfor %}
+</ul>
+{% if is_member %}
+    <a href="{% url 'leave_community' community.id %}">Leave Community</a>
+{% else %}
+    <a href="{% url 'join_community' community.id %}">Join Community</a>
+{% endif %}
+<a href="{% url 'community_list' %}">Back to Communities</a>

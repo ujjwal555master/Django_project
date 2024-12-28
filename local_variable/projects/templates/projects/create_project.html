@@ -1,0 +1,12 @@
+<h1>Upload  Projects</h1>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <label for="title">Title:</label>
+    <input type="text" name="title" id="title" required>
+
+    <label for="description">description</label>
+    <input type="text" name="description" id="description" required>
+
+    <button type="submit">Upload</button>
+
+</form>

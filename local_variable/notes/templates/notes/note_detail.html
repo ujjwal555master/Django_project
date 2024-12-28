@@ -1,0 +1,13 @@
+<h1>{{ note.title }}</h1>
+<p>{{ note.description }}</p>
+<p>Uploaded by: {{ note.uploaded_by }}</p>
+{% if note.file %}
+    <a href="{{ note.file.url }}">Download File</a>
+{% endif %}
+{% if request.user == note.uploaded_by %}
+    <a href="{% url 'edit_note' note.pk %}">Edit</a>
+    <form method="post" action="{% url 'delete_note' note.pk %}">
+        {% csrf_token %}
+        <button type="submit">Delete</button>
+{% endif %}
+</form>

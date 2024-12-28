@@ -1,0 +1,7 @@
+<h1>{{ paper.title }}</h1>
+<p><strong>Subject:</strong> {{ paper.subject }}</p>
+<p><strong>Exam Type:</strong> {{ paper.exam_type }}</p>
+<p><strong>Uploaded By:</strong> {{ paper.uploaded_by.username }}</p>
+<p><strong>Uploaded At:</strong> {{ paper.uploaded_at }}</p>
+<a href="{{ paper.file.url }}" download>Download Paper</a>
+<a href="{% url 'paper_list' %}">Back to Papers</a>

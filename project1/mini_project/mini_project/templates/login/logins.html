@@ -1,0 +1,10 @@
+<h1>hello this is login page</h1>
+<form action="" method="POST" nonvalidate>
+    {% csrf_token %}
+    {% for fm in form %}
+    <p>
+        {{fm.label_tag}} {{fm}} {{fm.error|striptags}} <br><br>
+    </p>
+    {% endfor %}
+    <input type="submit" value="Login">
+</form>

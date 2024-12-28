@@ -1,0 +1,26 @@
+<h1>Edit Profile</h1>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <label for="first_name">First Name:</label>
+    <input type="text" name="first_name" id="first_name" value="{{ user.first_name }}">
+    
+    <label for="last_name">Last Name:</label>
+    <input type="text" name="last_name" id="last_name" value="{{ user.last_name }}">
+    
+    <label for="college">College:</label>
+    <input type="text" name="college" id="college" value="{{ user.college }}">
+    
+    <label for="year_of_study">Year of Study:</label>
+    <input type="number" name="year_of_study" id="year_of_study" value="{{ user.year_of_study }}">
+    
+    <label for="skills">Skills:</label>
+    <textarea name="skills" id="skills">{{ user.skills }}</textarea>
+    
+    <label for="bio">Bio:</label>
+    <textarea name="bio" id="bio">{{ user.bio }}</textarea>
+    
+    <label for="profile_picture">Profile Picture:</label>
+    <input type="file" name="profile_picture" id="profile_picture">
+    
+    <button type="submit">Save</button>
+</form>

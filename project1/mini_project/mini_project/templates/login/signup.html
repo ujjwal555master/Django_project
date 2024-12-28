@@ -1,0 +1,17 @@
+<h1>This is the signup page</h1>
+
+<form action="" method="POST" nonvalidate>
+ {% csrf_token %}
+ {% for fm in form %}
+    <p>
+        {{fm.label_tag}} {{fm}} {{fm.error}} <br><br>
+    </p>
+ {% endfor %}
+    <input type="submit" value="Login">
+</form>
+{% if messages %}
+    {% for message in messages %}
+        <small> {{message}} </small>
+        
+        {% endfor %}
+{% endif %}
